@@ -1,27 +1,27 @@
-# SkillsCloud
+# Skills Claude Code
 
-Repositório de skills e módulos de conhecimento para fortalecer a presença digital, a segurança e a performance de sites e sistemas.
+Repositório de skills reutilizáveis em Markdown para apoiar o desenvolvimento de aplicações, com orientações práticas sobre segurança, performance e outros temas de engenharia de software.
 
 ## Visão Geral
 
-Este projeto foi pensado como uma biblioteca de skills em formato Markdown, organizada para documentar práticas, diagnósticos e boas configurações que ajudam a tornar sites e sistemas mais seguros, eficientes e preparados para crescimento.
+Este projeto é uma biblioteca de skills em Markdown. Cada arquivo em `skills/` aborda um tema independente e oferece contexto, checklist e recomendações aplicáveis a sites e sistemas.
 
-A ideia central é simples: cada skill representa um tema específico, com foco em ação prática, diagnóstico e reforço estratégico.
+As recomendações devem ser adaptadas à arquitetura e validadas com medições; nem toda técnica é necessária para todo projeto.
 
 ## Estrutura do Repositório
 
 ```text
-SkillsCloude/
+skills-claude-code/
 ├── README.md
 ├── skills/
 │   ├── site-security.md
-│   └── ...
-└── LICENSE
+│   └── web-performance.md
+└── ...
 ```
 
 ## Como funciona
 
-Cada arquivo dentro da pasta `skills/` representa uma skill independente, com documentação clara e objetiva sobre:
+Cada arquivo dentro da pasta `skills/` representa uma skill independente, com documentação sobre:
 
 - problema que resolve
 - contexto técnico e estratégico
@@ -33,43 +33,24 @@ Dessa forma, o repositório pode crescer com múltiplos módulos sem perder cons
 
 ## Skills disponíveis
 
-### 1. Site Security
-Arquivo: `skills/site-security.md`
+### [Site Security](skills/site-security.md)
 
-Foco: blindagem de sites, proteção de infraestrutura, revisão de DNS, acesso direto ao servidor, TLS/HTTPS e prevenção de brechas comuns.
+Foco: revisão de segredos no frontend, autenticação, sessões, rate limiting, exposição da origem e configuração de TLS.
 
-### 2. Em breve
-A estrutura já está pronta para receber novas skills, como por exemplo:
+### [Web Performance](skills/web-performance.md)
 
-- SEO técnico
-- performance de páginas
-- automação de marketing
-- arquitetura de sites
-- fluxo de conversão
-- segurança para e-commerces
-- auditoria de presença digital
+Foco: diagnóstico e melhoria de performance percebida e real no frontend, na rede, nas APIs, no backend e no banco de dados.
+
+Novas skills podem ser adicionadas como arquivos Markdown independentes dentro de `skills/`.
 
 ## Objetivo do repositório
 
-Criar uma base reutilizável de conhecimento para:
+Manter uma base reutilizável de conhecimento para:
 
-- reforçar segurança
-- reduzir riscos operacionais
-- melhorar a confiabilidade de sistemas e sites
+- fortalecer segurança e confiabilidade
+- melhorar desempenho e experiência do usuário
 - documentar boas práticas em formatos prontos para uso
 - expandir o projeto com múltiplas skills de forma organizada
-
-## Filosofia da abordagem
-
-A maioria dos problemas não está na aparência do site, mas na infraestrutura por trás dele. Isso inclui:
-
-- endereço real do servidor exposto
-- servidor acessível diretamente pela internet
-- TLS mal configurado
-- subdomínios esquecidos
-- tráfego entre proxy e origem sem proteção adequada
-
-A ideia é transformar a “sensação de segurança” em segurança real.
 
 ## Recomendação de uso
 
@@ -91,4 +72,4 @@ Este repositório pode ser adaptado conforme necessidade do projeto, com foco em
 
 ---
 
-O repositório foi organizado para crescer em múltiplas habilidades, mantendo a primeira skill como base sólida em segurança de sites.
+O repositório está organizado para crescer com skills independentes e complementares.

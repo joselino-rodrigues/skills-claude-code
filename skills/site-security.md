@@ -49,9 +49,13 @@ Implemente limitação de requisições no servidor para reduzir tentativas auto
 
 ### Endereço da origem e acesso direto
 
-- [ ] Revise DNS, subdomínios ativos, serviços antigos e infraestrutura legada.
-- [ ] Avalie se endereços de origem estão expostos por registros públicos, aplicações ou serviços auxiliares.
-- [ ] Se houver proxy/CDN, restrinja o acesso à origem conforme a arquitetura e os endereços oficiais do provedor; valide antes de aplicar regras para não interromper tráfego legítimo ou acesso administrativo.
+- [ ] Revise registros DNS atuais e, quando apropriado, históricos; um registro antigo pode revelar um endereço anteriormente usado, mas não prova que ele ainda hospeda a aplicação.
+- [ ] Inventarie subdomínios, serviços auxiliares e infraestrutura legada. Confirme se cada host ainda é necessário e se está protegido de acordo com sua função.
+- [ ] Revise cabeçalhos de e-mails transacionais enviados pelo sistema para identificar divulgação desnecessária de detalhes de infraestrutura. O IP do servidor de envio não é necessariamente o IP da origem web; prefira um provedor de e-mail dedicado quando adequado.
+- [ ] Avalie se endereços da origem aparecem em registros públicos, aplicações ou serviços auxiliares. A exposição do endereço, por si só, não significa bypass: o impacto depende dos controles de acesso e dos serviços disponíveis na origem.
+- [ ] Se houver proxy/CDN, restrinja o acesso à origem conforme a arquitetura e os endereços oficiais do provedor, mantendo exceções necessárias para administração e verificações de saúde. Planeje a atualização dos intervalos permitidos e valide as regras para não interromper tráfego legítimo.
+- [ ] Teste o acesso direto à origem somente em ativos próprios ou autorizados e confirme que os controles esperados bloqueiam ou limitam esse tráfego.
+- [ ] Se um endereço de origem ativo tiver sido exposto, avalie a rotação do endereço e atualize DNS, regras de firewall e integrações dependentes; não trate a troca do IP como substituta dos controles de acesso.
 - [ ] Proteja serviços administrativos e portas de gerenciamento com controles de acesso apropriados.
 
 ### TLS entre proxy e origem
@@ -62,6 +66,7 @@ O TLS deve proteger tanto o trecho entre o navegador e o proxy quanto o trecho e
 - [ ] No Cloudflare, prefira `Full (strict)` quando a origem estiver configurada com certificado válido ou com um certificado de origem aceito pelo Cloudflare.
 - [ ] Não use `Flexible` como substituto para configurar TLS na origem: nesse modo, o trecho do Cloudflare até o servidor não usa HTTPS.
 - [ ] Confirme renovação, validade, hostname e cadeia do certificado, além do comportamento de redirecionamentos HTTP para HTTPS.
+- [ ] Trate TLS como uma camada da defesa: `Full (strict)` protege e valida o trecho Cloudflare–origem, mas não substitui autenticação, autorização, firewall ou proteção da aplicação.
 
 ## Processo recomendado
 
